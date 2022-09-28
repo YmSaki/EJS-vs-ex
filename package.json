@@ -1,0 +1,39 @@
+{
+	"name": "ejs-language",
+	"displayName": "ejs-language",
+	"version": "0.0.1",
+	"publisher": "YmSaki",
+	"engines": {
+		"vscode": "^1.33.1"
+	},
+	"main": "./extension.js",
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "ejs",
+				"extensions": [
+					".ejs"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"scopeName": "source.ejs",
+				"path": "./ejs.tmLanguage.json",
+				"language": "ejs",
+				"embeddedLanguages": {
+					"text.html": "html",
+					"source.css": "css",
+					"source.js": "javascript"
+				}
+			}
+		]
+	}
+}
