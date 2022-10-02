@@ -7,26 +7,38 @@
 </head>
 
 <body>
-	<header>
-		<h1>ヘッダー</h1>
-	</header>
+	<header><h1>header</h1></header>
 	<script>
 		const a = "A";
+		for(let i = 0; i < 10; i++){
+
+		}
 	</script>
 
+	<!-- をあｋｓださそでゃｋｓｈｄｌｈ -->
+
 	<%# const a="test" ; var b=0; %>
-		<%= var b=a; %>
+	<%= var b=a; %>
+	<%= const a="test" ; var b=0; %>
+	<%# let a=1; %>
 
-			<%= const a="test" ; var b=0; %>
-				<%# let a=1; %>
+	<%_ const a="test" ; var b=0; _%>
+	<%_ var b=a; _%>
+	<%_ for(let i = 0; i < 10; i++) { _%>
+		
+	<%_ } _%>
 
-					<%_ const a="test" ; var b=0; _%>
-						<%_ var b=a; _%>
+	<%_ if( a == a ){ _%>
+	<%_ } else { _%>
+	<%_ if( a == a ){ _%>
 
-							<% const a="A" ; function(); -%>
-								<footer>
-									<p>footer</p>
-								</footer>
+	<% 
+		const a="A" ;
+		function();
+	-%>
+<footer>
+		<p>footer</p>
+	</footer>
 </body>
 
 </html>

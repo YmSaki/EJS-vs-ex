@@ -2638,13 +2638,78 @@
 					"name": "comment.block.html"
 				},
 				{
-					"begin": "(<%=|<%-|<%_|<%)",
+					"begin": "(<%_)\\s*((for|if))(\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.tag.html"
+						},
+						"2": {
+							"name": "keyword.control.js"
+						},
+						"3": {
+							"name": "meta.brace.round.js"
+						}
+					},
+					"end": "(\\))\\s*({)\\s*(_%>)",
+					"endCaptures": {
+						"1": {
+							"name": "meta.brace.round.js"
+						},
+						"2": {
+							"name": "meta.block.js"
+						},
+						"3": {
+							"name": "entity.name.tag.html"
+						}
+					},
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				},
+				{
+					"match": "(<%_)\\s*(})\\s*(else)\\s*({)\\s*(_%>)",
+					"captures": {
+						"1": {
+							"name": "entity.name.tag.html"
+						},
+						"2": {
+							"name": "meta.block"
+						},
+						"3": {
+							"name": "keyword.control.conditional.js"
+						},
+						"4": {
+							"name": "meta.block"
+						},
+						"5": {
+							"name": "entity.name.tag.html"
+						}
+					}
+				},
+				{
+					"match": "(<%_)\\s*(})\\s*(_%>)",
+					"captures": {
+						"1": {
+							"name": "entity.name.tag.html"
+						},
+						"2": {
+							"name": "meta.block.js"
+						},
+						"3": {
+							"name": "entity.name.tag.html"
+						}
+					}
+				},
+				{
+					"begin": "(<%=|<%-|<%_|<%)\\s*",
 					"beginCaptures": {
 						"0": {
 							"name": "entity.name.tag.html"
 						}
 					},
-					"end": "(-%>|_%>|%>)",
+					"end": "\\s*(-%>|_%>|%>)",
 					"endCaptures": {
 						"0": {
 							"name": "entity.name.tag.html"
